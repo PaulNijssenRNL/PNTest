@@ -1,0 +1,29 @@
+!tape
+name: get entrylist succes
+interactions:
+- recorded: 2020-03-19T05:19:43.343Z
+  request:
+    method: POST
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/temporaryCode/spaces/ricoh-sdce/verify
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+  response:
+    status: 200
+    headers:
+      Content-Type: application/json; charset=utf-8
+      Status: 200 OK
+    body: '{"expiresIn": 604800,"retentionPeriod": 604800,"oneTime": false,"extension": {"tempAuthCode": "ABCD1234", "tenantId": "3044191822", "userId": "nl-customer"},"remainingTime": 505414}'
+
+- recorded: 2020-03-20T05:19:43.343Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678.json
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+  response:
+    status: 200
+    headers:
+      Content-Type: application/json; charset=utf-8
+      Status: 200 OK
+    body: '[{"fileId":"0","name":"file1.pdf","tempName":"12345678-0"},{"fileId":"1","name":"file2.pdf","tempName":"12345678-1"}]'
+    

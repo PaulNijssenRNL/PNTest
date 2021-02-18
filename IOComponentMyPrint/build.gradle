@@ -1,0 +1,244 @@
+import javax.security.auth.login.ConfigurationSpi;
+plugins {
+  id "com.jfrog.artifactory" version "4.9.5"
+}
+// Plugins
+apply plugin: 'java'
+apply plugin: "groovy"
+apply plugin: 'eclipse'
+apply plugin: 'jacoco'
+
+// Java Version
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+def zip_version = "2.0.0"
+// Encording
+tasks.withType(AbstractCompile) each { it.options.encoding = 'UTF-8' }
+// Provided type
+configurations {
+  provided
+  runtimeZip.extendsFrom runtime
+  runtimeZip.exclude group:'com.ricoh.nsp.io.component', module:'io-component-framework'
+  runtimeZip.exclude group:'com.ricoh.nsp.io.component', module:'io-component-internal-framework'
+}
+
+// Sources
+sourceSets {
+  main.compileClasspath += configurations.provided
+  eclipse.classpath.plusConfigurations += [configurations.provided]
+  test {
+    java {
+      srcDirs = ["src/test/java", "src/test/groovy"]
+    }
+    groovy {
+      srcDirs = ["src/test/java", "src/test/groovy"]
+      exclude "**/*Skeleton*"
+    }
+  }
+}
+
+repositories {
+  mavenCentral()
+  maven { url 'http://version99.qos.ch' }
+}
+
+eclipse {
+  project {
+    natures 'edu.umd.cs.findbugs.plugin.eclipse.findbugsNature'
+    buildCommand 'edu.umd.cs.findbugs.plugin.eclipse.findbugsBuilder'
+  }
+}
+
+// search dependencies by http://mvnrepository.com/
+dependencies {
+  provided fileTree(dir: 'src/main/libs', include: '*.jar')
+  provided "org.apache.camel:camel-core:2.19.4"
+  provided "org.projectlombok:lombok:1.18.6"
+  provided "org.apache.httpcomponents:httpclient:4.5.3"
+  provided "org.apache.httpcomponents:httpmime:4.5.3"
+  provided "org.apache.commons:commons-lang3:3.6"
+  provided "commons-io:commons-io:2.5"
+  provided "org.apache.commons:commons-compress:1.14"
+  provided "com.google.guava:guava:22.0"
+  provided "ch.qos.logback:logback-classic:1.2.3"
+  provided "org.slf4j:slf4j-api:1.7.25"
+  provided('com.sun.mail:javax.mail:1.6.0') { exclude group: 'javax.activation' }
+  provided "com.fasterxml.jackson.core:jackson-core:2.9.6"
+  provided "com.fasterxml.jackson.core:jackson-databind:2.9.6"
+
+  testCompile fileTree(dir: 'src/main/libs', include: '*.jar')
+  testCompile "org.apache.camel:camel-core:2.19.4"
+  testCompile "org.projectlombok:lombok:1.18.6"
+  testCompile "org.apache.httpcomponents:httpclient:4.5.3"
+  testCompile "org.apache.httpcomponents:httpmime:4.5.3"
+  testCompile "org.apache.commons:commons-lang3:3.6"
+  testCompile "commons-io:commons-io:2.5"
+  testCompile "org.apache.commons:commons-compress:1.14"
+  // testCompile "com.google.guava:guava:22.0"
+  testCompile "ch.qos.logback:logback-classic:1.2.3"
+  testCompile "org.slf4j:slf4j-api:1.7.25"
+  testCompile('com.sun.mail:javax.mail:1.6.0') { exclude group: 'javax.activation' }
+  testCompile "com.fasterxml.jackson.core:jackson-core:2.9.6"
+  testCompile "com.fasterxml.jackson.core:jackson-databind:2.9.6"
+
+  testCompile "org.jmockit:jmockit:1.25"
+  testCompile "junit:junit:4.12"
+  testCompile "org.hamcrest:hamcrest-all:1.3"
+  testCompile "cglib:cglib-nodep:3.2.4"
+  testCompile "org.objenesis:objenesis:2.4"
+  testCompile "org.codehaus.groovy:groovy-all:2.4.11"
+  testCompile "org.spockframework:spock-core:1.1-groovy-2.4"
+  testCompile "joda-time:joda-time:2.9.9"
+  
+  testCompile "com.google.guava:guava:21.0" // NOTE: guava 22.0 does not work with betamax ...
+  testCompile "software.betamax:betamax-core:2.0.1"
+  testCompile "software.betamax:betamax-junit:2.0.1"
+}
+
+
+jacoco { toolVersion = "0.8.2" }
+jacocoTestReport.reports.xml.enabled = true
+
+//task wrapper(type: Wrapper) { gradleVersion = '4.7' }
+
+jar {
+  manifest {
+    attributes 'Implementation-Title': project.baseName,
+    'Implementation-Version': project.version
+  }
+  baseName project.baseName
+}
+
+task cleanBuild(dependsOn: [clean, build]) { description 'Deletes the build directory and assembles and tests this project.' }
+
+task skeletonZip(type: Zip, dependsOn: cleanBuild) {
+  archiveName = "SkeletonComponent_${zip_version}.zip"
+
+  into("src") {
+    from "src"
+  }
+  into("gradle") {
+    from "gradle"
+  }
+  into("license") {
+    from "license"
+  }
+  from(".project") {
+    filter {
+      String l -> l.replaceAll('IOComponentSkeletonExternal', 'IOComponentSkeleton')
+    }
+  }
+  into(".settings") {
+    from ".settings"
+  }
+  from "build.gradle"
+  from "gradle.properties"
+  from "gradlew"
+  from "gradlew.bat"
+}
+
+task zip(type: Zip, dependsOn: jar) {
+  archiveName = "${project.baseName}-${version}.${extension}"
+  from "build/libs/${project.baseName}-${version}.jar"
+  from "${jacoco.reportsDir}/test/jacocoTestReport.txt"
+  into("libs"){
+    from configurations.runtimeZip
+  }
+
+  into("resources"){
+    from sourceSets.main.resources
+    exclude 'META-INF/services'
+    exclude 'com/**/*.json'
+  }
+}
+
+artifacts { archives zip }
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+  description 'Assembles a jar archive containing the sources.'
+  manifest {
+    attributes 'Implementation-Title': project.baseName,
+    'Implementation-Version': project.version
+  }
+  baseName project.baseName
+  classifier 'sources'
+  from sourceSets.main.allSource
+  exclude 'META-INF/services'
+}
+
+import groovy.json.JsonOutput
+
+ext {
+  limits = [
+    'instruction': 0, // TBD
+    'branch'     : 0, // TBD
+    'line'       : 80,
+    'complexity' : 0, // TBD
+    'method'     : 0, // TBD
+    'class'      : 0 // TBD
+  ]
+}
+
+jacocoTestReport {
+  doLast {
+    def report = file("${jacoco.reportsDir}/test/jacocoTestReport.xml")
+    logger.lifecycle("Checking coverage results: ${report}")
+
+    def parser = new XmlParser()
+    parser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+    parser.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false)
+    def results = parser.parse(report)
+
+    def percentage = {
+      if (it==null){
+        return null;
+      }
+      def covered = it?.'@covered' as Double
+      def missed = it?.'@missed' as Double
+      if((covered == null) || (missed == null)) {
+        return 0;
+      }
+      ((covered / (covered + missed)) * 100).round(2)
+    }
+
+    def counters = results.counter
+    def metrics = [:]
+    metrics << [
+      'instruction': percentage(counters.find { it?.'@type'?.equals('INSTRUCTION') }),
+      'branch'     : percentage(counters.find { it?.'@type'?.equals('BRANCH') }),
+      'line'       : percentage(counters.find { it?.'@type'?.equals('LINE') }),
+      'complexity' : percentage(counters.find { it?.'@type'?.equals('COMPLEXITY') }),
+      'method'     : percentage(counters.find { it?.'@type'?.equals('METHOD') }),
+      'class'      : percentage(counters.find { it?.'@type'?.equals('CLASS') })
+    ]
+
+
+    def failures = []
+    def resultsMap = [:]
+    metrics.each {
+      def limit = limits[it.key]
+      if (it.value!=null&&it.value < limit) {
+        failures.add("- ${it.key} coverage rate is: ${it.value}%, minimum is ${limit}%")
+      }
+      resultsMap.put(it.key, it.value)
+    }
+
+    if (failures) {
+      logger.quiet("------------------ Code Coverage Failed -----------------------")
+      failures.each { logger.quiet(it) }
+      logger.quiet("---------------------------------------------------------------")
+      throw new GradleException("Code coverage failed")
+    } else{
+      logger.quiet("Passed Code Coverage Checks")
+      def resultText = new File("${jacoco.reportsDir}/test/jacocoTestReport.txt")
+      resultText.createNewFile()
+      resultText.text = JsonOutput.toJson(resultsMap)
+    }
+  }
+}
+check.dependsOn jacocoTestReport
+
+// task dependencies
+build.dependsOn sourcesJar,jacocoTestReport
+build.shouldRunAfter clean
+jar.dependsOn check

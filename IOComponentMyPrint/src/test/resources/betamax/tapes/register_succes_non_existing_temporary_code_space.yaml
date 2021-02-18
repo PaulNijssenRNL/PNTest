@@ -1,0 +1,366 @@
+!tape
+name: register succes non existing temporary code space
+interactions:
+- recorded: 2019-12-26T04:31:35.192Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/me
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer 82SPuDUplulhYevvyIAWUOk1qbSmZ8ZDOF6TlKgR1uoMCyU2uTHSMf0IzCfLhWn8
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Encoding: gzip
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 26 Dec 2019 04:31:35 GMT
+      ETag: W/"4e324a33bbb4347f78d44c4c5d36b519"
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=sP4rrT1TaARQhZTscsKxXbpJP21A0RNBWUPFvbaHzpZ4fnfLJPrgqOWD68DFSjNuTRvzXLwcLuMp/0ZGKSIm+GfSlETZ9blRw4Nwc6a0PGNjlCRsp2xBLOZRPi10; Expires=Thu, 02 Jan 2020 04:31:34 GMT; Path=/
+      Status: 200 OK
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN, Deny
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: 90b4cd3b-616f-42ea-bb61-4d4622bce000
+      X-Runtime: '0.033134'
+      X-Unique-Id: e915696b-8704-42cb-953a-aff6685c89a8
+      X-XSS-Protection: 1; mode=block
+    body: '{"tenantId":"3044191822","userId":"nl-customer","passwordAssigned":true,"familyName":"customer","givenName":"nl","mailAddresses":["ricoh.feature+nl.customer@gmail.com"],"loginMailAddress":"ricoh.feature+nl.customer@gmail.com","nextLoginMailAddress":null,"loginMailAddressConfirmationExpiresAt":null,"locale":"nl_NL","timezone":"Europe/Amsterdam","status":"active","description":null,"roles":["PowerUser"],"onpremiseAccounts":[],"onpremiseIds":[],"userCodeAssigned":false,"oauth":[],"uuid":"be16bef6-8cd4-46c5-b3b2-86e12813ab6f","country":"NL","tenantTypeParam":{"type":"organization","ownerClientId":null},"allowedOpenidProviders":[],"permittedServices":[{"serviceClass":"si","permittedLicenses":[{"licenseId":"16635124613821","serviceClass":"si","volumeType":"unlimited","contractId":null,"contractSystemId":null,"contractSystemExtension":{}}]}],"ownedLicenses":[{"licenseId":"16635124613821","serviceClass":"si","volumeType":"unlimited","contractId":null,"contractSystemId":null,"contractSystemExtension":{}}],"allowedOpenidProviderAccounts":[],"belongedTenantHistory":[],"appExtension":{},"sharedAppExtensions":[],"uri":"https://api.deve.smart-integration.ricoh.com/v1/aut/tenants/3044191822/users/nl-customer"}'
+- recorded: 2019-12-26T04:31:36.328Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/tenants/3044191822/accessKey
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer 82SPuDUplulhYevvyIAWUOk1qbSmZ8ZDOF6TlKgR1uoMCyU2uTHSMf0IzCfLhWn8
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Encoding: gzip
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 26 Dec 2019 04:31:36 GMT
+      ETag: W/"9160143ffdbaa47b2d3ca5a0b15ed528"
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=R9a6eKwSXpkg8GC/dV58k5uJYeIwTHO9wvRnVDBsgGBg00K5HkR9cbLs5JLcNp5dF5rq+SZIj3q620ExBVC8Dvu6qCM/CQuOL6HIomTDqsMGegsMpgw+fQ3V0LiF; Expires=Thu, 02 Jan 2020 04:31:36 GMT; Path=/
+      Status: 200 OK
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN, Deny
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: 13a56357-ac81-49fe-b90c-749a9a87e436
+      X-Runtime: '0.013301'
+      X-Unique-Id: ab0898cb-3c61-4687-a378-f26b7077de57
+      X-XSS-Protection: 1; mode=block
+    body: '{"accessKey":"kwNcsUUB9cOuCHhAMeXPeUSTecJ2dliUoZ6p3cJlQZBfuE4iqgxJT9Cndy6NtZL2"}'
+- recorded: 2019-12-26T04:31:37.476Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/temporaryCode/spaces/3044191822
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic NzBVT0IwMzgwekZrMkdSS0JpcVNEa2xrcElZcnpMbVQ6NzFpV3Q4dUkxenlpWVdmdW5uTHNZSjcxM1FTZEFIQmNZSEdrNGR1aWN2VUcwZmVabDU0OGx0ZmlhNkpSdU52dg==
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Encoding: gzip
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 26 Dec 2019 04:31:37 GMT
+      ETag: W/"6411f5923c67d9a1163b460348a79909"
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=dsYV+8p7h+PbYA/6TlOcAqRL1AR4jRdPnL3ryeObYK8ZezdHoluMAjyE7noYeCCHQy3rJpRz3hKaAYJrEuzZ5FikcqgHDQ2vgbowTRc92EMM4Qsvh/o8ACXj8SzU; Expires=Thu, 02 Jan 2020 04:31:37 GMT; Path=/
+      Status: 200 OK
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN, Deny
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: 83451070-14fe-45b0-ad72-ab42998306d6
+      X-Runtime: '0.019902'
+      X-Unique-Id: a54f1e31-7c62-4167-b3da-29e28c85ec63
+      X-XSS-Protection: 1; mode=block
+    body: '{"spaceId":"3044191822","characters":"0123456789","length":10,"expiresIn":604800,"retentionPeriod":604800,"oneTime":false,"collisionProbabilityLimit":0.0001}'
+- recorded: 2019-12-26T04:31:38.633Z
+  request:
+    method: POST
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/temporaryCode/spaces/3044191822/issue
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic NzBVT0IwMzgwekZrMkdSS0JpcVNEa2xrcElZcnpMbVQ6NzFpV3Q4dUkxenlpWVdmdW5uTHNZSjcxM1FTZEFIQmNZSEdrNGR1aWN2VUcwZmVabDU0OGx0ZmlhNkpSdU52dg==
+      Connection: Keep-Alive
+      Content-Length: '163'
+      Content-Type: application/json; charset=UTF-8
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+    body: '{"extension":{"files":[{"fileId":"02daf242-d96c-47af-b4c7-fabc697065b9","name":"file1.pdf"},{"fileId":"5089acc0-f974-4ea7-a48f-5199ed3e9a3b","name":"file2.pdf"}]}}'
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Encoding: gzip
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 26 Dec 2019 04:31:38 GMT
+      ETag: W/"6e0ae828c56d272d55dc99057c4e1657"
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=OFL6f6EZVz750z8G4h9ETeKIXVwHU3mkoXBvM7958rrLpAINhwo81KkFSyMgApBaTsPOHcW81O5VByKwdyQt+8PYBNHOg8D2k1+ntOgKOX4Z5edaHv4enJu0MOH4; Expires=Thu, 02 Jan 2020 04:31:38 GMT; Path=/
+      Status: 200 OK
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN, Deny
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: 7d0967bd-862d-42a8-a06a-ebf0a03b310d
+      X-Runtime: '0.044644'
+      X-Unique-Id: 75ae02ba-8866-4fd6-8aa4-4dd580915e89
+      X-XSS-Protection: 1; mode=block
+    body: '{"code":"12345678","expiresIn":604800,"retentionPeriod":604800,"oneTime":false,"extension":{"files":[{"fileId":"02daf242-d96c-47af-b4c7-fabc697065b9","name":"file1.pdf"},{"fileId":"5089acc0-f974-4ea7-a48f-5199ed3e9a3b","name":"file2.pdf"}]}}'
+- recorded: 2019-12-26T04:31:39.866Z
+  request:
+    method: PUT
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678-0
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic NzBVT0IwMzgwekZrMkdSS0JpcVNEa2xrcElZcnpMbVQ6NzFpV3Q4dUkxenlpWVdmdW5uTHNZSjcxM1FTZEFIQmNZSEdrNGR1aWN2VUcwZmVabDU0OGx0ZmlhNkpSdU52dg==
+      Connection: Keep-Alive
+      Content-Length: '3028'
+      Content-Type: application/octet-stream
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+      X-Tenant-Access-Key: kwNcsUUB9cOuCHhAMeXPeUSTecJ2dliUoZ6p3cJlQZBfuE4iqgxJT9Cndy6NtZL2
+    body: !!binary |-
+      JVBERi0xLjMNCiXi48/TDQoNCjEgMCBvYmoNCjw8DQovVHlwZSAvQ2F0YWxvZw0KL091dGxpbmVzIDIgMCBSDQovUGFnZXMgMyAwIFINCj4+DQplbmRvYmoNCg0KMiAwIG9iag0KPDwNCi9UeXBlIC9PdXRsaW5lcw0KL0NvdW50IDANCj4+DQplbmRvYmoNCg0KMyAwIG9iag0KPDwNCi9UeXBlIC9QYWdlcw0KL0NvdW50IDINCi9LaWRzIFsgNCAwIFIgNiAwIFIgXSANCj4+DQplbmRvYmoNCg0KNCAwIG9iag0KPDwNCi9UeXBlIC9QYWdlDQovUGFyZW50IDMgMCBSDQovUmVzb3VyY2VzIDw8DQovRm9udCA8PA0KL0YxIDkgMCBSIA0KPj4NCi9Qcm9jU2V0IDggMCBSDQo+Pg0KL01lZGlhQm94IFswIDAgNjEyLjAwMDAgNzkyLjAwMDBdDQovQ29udGVudHMgNSAwIFINCj4+DQplbmRvYmoNCg0KNSAwIG9iag0KPDwgL0xlbmd0aCAxMDc0ID4+DQpzdHJlYW0NCjIgSg0KQlQNCjAgMCAwIHJnDQovRjEgMDAyNyBUZg0KNTcuMzc1MCA3MjIuMjgwMCBUZA0KKCBBIFNpbXBsZSBQREYgRmlsZSApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDY4OC42MDgwIFRkDQooIFRoaXMgaXMgYSBzbWFsbCBkZW1vbnN0cmF0aW9uIC5wZGYgZmlsZSAtICkgVGoNCkVUDQpCVA0KL0YxIDAwMTAgVGYNCjY5LjI1MDAgNjY0LjcwNDAgVGQNCigganVzdCBmb3IgdXNlIGluIHRoZSBWaXJ0dWFsIE1lY2hhbmljcyB0dXRvcmlhbHMuIE1vcmUgdGV4dC4gQW5kIG1vcmUgKSBUag0KRVQNCkJUDQovRjEgMDAxMCBUZg0KNjkuMjUwMCA2NTIuNzUyMCBUZA0KKCB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDYyOC44NDgwIFRkDQooIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlICkgVGoNCkVUDQpCVA0KL0YxIDAwMTAgVGYNCjY5LjI1MDAgNjE2Ljg5NjAgVGQNCiggdGV4dC4gQW5kIG1vcmUgdGV4dC4gQm9yaW5nLCB6enp6ei4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kICkgVGoNCkVUDQpCVA0KL0YxIDAwMTAgVGYNCjY5LjI1MDAgNjA0Ljk0NDAgVGQNCiggbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDU5Mi45OTIwIFRkDQooIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlIHRleHQuICkgVGoNCkVUDQpCVA0KL0YxIDAwMTAgVGYNCjY5LjI1MDAgNTY5LjA4ODAgVGQNCiggQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgKSBUag0KRVQNCkJUDQovRjEgMDAxMCBUZg0KNjkuMjUwMCA1NTcuMTM2MCBUZA0KKCB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBFdmVuIG1vcmUuIENvbnRpbnVlZCBvbiBwYWdlIDIgLi4uKSBUag0KRVQNCmVuZHN0cmVhbQ0KZW5kb2JqDQoNCjYgMCBvYmoNCjw8DQovVHlwZSAvUGFnZQ0KL1BhcmVudCAzIDAgUg0KL1Jlc291cmNlcyA8PA0KL0ZvbnQgPDwNCi9GMSA5IDAgUiANCj4+DQovUHJvY1NldCA4IDAgUg0KPj4NCi9NZWRpYUJveCBbMCAwIDYxMi4wMDAwIDc5Mi4wMDAwXQ0KL0NvbnRlbnRzIDcgMCBSDQo+Pg0KZW5kb2JqDQoNCjcgMCBvYmoNCjw8IC9MZW5ndGggNjc2ID4+DQpzdHJlYW0NCjIgSg0KQlQNCjAgMCAwIHJnDQovRjEgMDAyNyBUZg0KNTcuMzc1MCA3MjIuMjgwMCBUZA0KKCBTaW1wbGUgUERGIEZpbGUgMiApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDY4OC42MDgwIFRkDQooIC4uLmNvbnRpbnVlZCBmcm9tIHBhZ2UgMS4gWWV0IG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gKSBUag0KRVQNCkJUDQovRjEgMDAxMCBUZg0KNjkuMjUwMCA2NzYuNjU2MCBUZA0KKCBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDY2NC43MDQwIFRkDQooIHRleHQuIE9oLCBob3cgYm9yaW5nIHR5cGluZyB0aGlzIHN0dWZmLiBCdXQgbm90IGFzIGJvcmluZyBhcyB3YXRjaGluZyApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDY1Mi43NTIwIFRkDQooIHBhaW50IGRyeS4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gKSBUag0KRVQNCkJUDQovRjEgMDAxMCBUZg0KNjkuMjUwMCA2NDAuODAwMCBUZA0KKCBCb3JpbmcuICBNb3JlLCBhIGxpdHRsZSBtb3JlIHRleHQuIFRoZSBlbmQsIGFuZCBqdXN0IGFzIHdlbGwuICkgVGoNCkVUDQplbmRzdHJlYW0NCmVuZG9iag0KDQo4IDAgb2JqDQpbL1BERiAvVGV4dF0NCmVuZG9iag0KDQo5IDAgb2JqDQo8PA0KL1R5cGUgL0ZvbnQNCi9TdWJ0eXBlIC9UeXBlMQ0KL05hbWUgL0YxDQovQmFzZUZvbnQgL0hlbHZldGljYQ0KL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcNCj4+DQplbmRvYmoNCg0KMTAgMCBvYmoNCjw8DQovQ3JlYXRvciAoUmF2ZSBcKGh0dHA6Ly93d3cubmV2cm9uYS5jb20vcmF2ZVwpKQ0KL1Byb2R1Y2VyIChOZXZyb25hIERlc2lnbnMpDQovQ3JlYXRpb25EYXRlIChEOjIwMDYwMzAxMDcyODI2KQ0KPj4NCmVuZG9iag0KDQp4cmVmDQowIDExDQowMDAwMDAwMDAwIDY1NTM1IGYNCjAwMDAwMDAwMTkgMDAwMDAgbg0KMDAwMDAwMDA5MyAwMDAwMCBuDQowMDAwMDAwMTQ3IDAwMDAwIG4NCjAwMDAwMDAyMjIgMDAwMDAgbg0KMDAwMDAwMDM5MCAwMDAwMCBuDQowMDAwMDAxNTIyIDAwMDAwIG4NCjAwMDAwMDE2OTAgMDAwMDAgbg0KMDAwMDAwMjQyMyAwMDAwMCBuDQowMDAwMDAyNDU2IDAwMDAwIG4NCjAwMDAwMDI1NzQgMDAwMDAgbg0KDQp0cmFpbGVyDQo8PA0KL1NpemUgMTENCi9Sb290IDEgMCBSDQovSW5mbyAxMCAwIFINCj4+DQoNCnN0YXJ0eHJlZg0KMjcxNA0KJSVFT0YNCg==
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Encoding: gzip
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 26 Dec 2019 04:31:39 GMT
+      ETag: W/"bcfbb029986cb5cbe72892c0bdbccf31"
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=+rNjyttS1p7BrZw5HYTxX67V1tLms2L8gXnhIyQWEXxYb2QNj9Es+1sbMYkoWPKlcwTPfGY6wNXAl4gBR/9QMBq+WdpGrTxK3Dt2dxaH+9VOmi1R8niUngRcHHIp; Expires=Thu, 02 Jan 2020 04:31:39 GMT; Path=/
+      Status: 200 OK
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN, Deny
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: d3760b0a-d905-450f-a770-562b81970a7d
+      X-Runtime: '0.095745'
+      X-Unique-Id: 67058921-ded5-4897-b97d-09720f46e7cc
+      X-XSS-Protection: 1; mode=block
+    body: '{"uri":"https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/1420069088-0","attribute":{"size":3028,"createdAt":"2019-12-26T04:31:39Z","expireAt":"2019-12-29T04:31:39Z"}}'
+- recorded: 2019-12-26T04:31:41.072Z
+  request:
+    method: PUT
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678-1
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic NzBVT0IwMzgwekZrMkdSS0JpcVNEa2xrcElZcnpMbVQ6NzFpV3Q4dUkxenlpWVdmdW5uTHNZSjcxM1FTZEFIQmNZSEdrNGR1aWN2VUcwZmVabDU0OGx0ZmlhNkpSdU52dg==
+      Connection: Keep-Alive
+      Content-Length: '3028'
+      Content-Type: application/octet-stream
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+      X-Tenant-Access-Key: kwNcsUUB9cOuCHhAMeXPeUSTecJ2dliUoZ6p3cJlQZBfuE4iqgxJT9Cndy6NtZL2
+    body: !!binary |-
+      JVBERi0xLjMNCiXi48/TDQoNCjEgMCBvYmoNCjw8DQovVHlwZSAvQ2F0YWxvZw0KL091dGxpbmVzIDIgMCBSDQovUGFnZXMgMyAwIFINCj4+DQplbmRvYmoNCg0KMiAwIG9iag0KPDwNCi9UeXBlIC9PdXRsaW5lcw0KL0NvdW50IDANCj4+DQplbmRvYmoNCg0KMyAwIG9iag0KPDwNCi9UeXBlIC9QYWdlcw0KL0NvdW50IDINCi9LaWRzIFsgNCAwIFIgNiAwIFIgXSANCj4+DQplbmRvYmoNCg0KNCAwIG9iag0KPDwNCi9UeXBlIC9QYWdlDQovUGFyZW50IDMgMCBSDQovUmVzb3VyY2VzIDw8DQovRm9udCA8PA0KL0YxIDkgMCBSIA0KPj4NCi9Qcm9jU2V0IDggMCBSDQo+Pg0KL01lZGlhQm94IFswIDAgNjEyLjAwMDAgNzkyLjAwMDBdDQovQ29udGVudHMgNSAwIFINCj4+DQplbmRvYmoNCg0KNSAwIG9iag0KPDwgL0xlbmd0aCAxMDc0ID4+DQpzdHJlYW0NCjIgSg0KQlQNCjAgMCAwIHJnDQovRjEgMDAyNyBUZg0KNTcuMzc1MCA3MjIuMjgwMCBUZA0KKCBBIFNpbXBsZSBQREYgRmlsZSApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDY4OC42MDgwIFRkDQooIFRoaXMgaXMgYSBzbWFsbCBkZW1vbnN0cmF0aW9uIC5wZGYgZmlsZSAtICkgVGoNCkVUDQpCVA0KL0YxIDAwMTAgVGYNCjY5LjI1MDAgNjY0LjcwNDAgVGQNCigganVzdCBmb3IgdXNlIGluIHRoZSBWaXJ0dWFsIE1lY2hhbmljcyB0dXRvcmlhbHMuIE1vcmUgdGV4dC4gQW5kIG1vcmUgKSBUag0KRVQNCkJUDQovRjEgMDAxMCBUZg0KNjkuMjUwMCA2NTIuNzUyMCBUZA0KKCB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDYyOC44NDgwIFRkDQooIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlICkgVGoNCkVUDQpCVA0KL0YxIDAwMTAgVGYNCjY5LjI1MDAgNjE2Ljg5NjAgVGQNCiggdGV4dC4gQW5kIG1vcmUgdGV4dC4gQm9yaW5nLCB6enp6ei4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kICkgVGoNCkVUDQpCVA0KL0YxIDAwMTAgVGYNCjY5LjI1MDAgNjA0Ljk0NDAgVGQNCiggbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDU5Mi45OTIwIFRkDQooIEFuZCBtb3JlIHRleHQuIEFuZCBtb3JlIHRleHQuICkgVGoNCkVUDQpCVA0KL0YxIDAwMTAgVGYNCjY5LjI1MDAgNTY5LjA4ODAgVGQNCiggQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgKSBUag0KRVQNCkJUDQovRjEgMDAxMCBUZg0KNjkuMjUwMCA1NTcuMTM2MCBUZA0KKCB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBFdmVuIG1vcmUuIENvbnRpbnVlZCBvbiBwYWdlIDIgLi4uKSBUag0KRVQNCmVuZHN0cmVhbQ0KZW5kb2JqDQoNCjYgMCBvYmoNCjw8DQovVHlwZSAvUGFnZQ0KL1BhcmVudCAzIDAgUg0KL1Jlc291cmNlcyA8PA0KL0ZvbnQgPDwNCi9GMSA5IDAgUiANCj4+DQovUHJvY1NldCA4IDAgUg0KPj4NCi9NZWRpYUJveCBbMCAwIDYxMi4wMDAwIDc5Mi4wMDAwXQ0KL0NvbnRlbnRzIDcgMCBSDQo+Pg0KZW5kb2JqDQoNCjcgMCBvYmoNCjw8IC9MZW5ndGggNjc2ID4+DQpzdHJlYW0NCjIgSg0KQlQNCjAgMCAwIHJnDQovRjEgMDAyNyBUZg0KNTcuMzc1MCA3MjIuMjgwMCBUZA0KKCBTaW1wbGUgUERGIEZpbGUgMiApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDY4OC42MDgwIFRkDQooIC4uLmNvbnRpbnVlZCBmcm9tIHBhZ2UgMS4gWWV0IG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gKSBUag0KRVQNCkJUDQovRjEgMDAxMCBUZg0KNjkuMjUwMCA2NzYuNjU2MCBUZA0KKCBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSB0ZXh0LiBBbmQgbW9yZSApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDY2NC43MDQwIFRkDQooIHRleHQuIE9oLCBob3cgYm9yaW5nIHR5cGluZyB0aGlzIHN0dWZmLiBCdXQgbm90IGFzIGJvcmluZyBhcyB3YXRjaGluZyApIFRqDQpFVA0KQlQNCi9GMSAwMDEwIFRmDQo2OS4yNTAwIDY1Mi43NTIwIFRkDQooIHBhaW50IGRyeS4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gQW5kIG1vcmUgdGV4dC4gKSBUag0KRVQNCkJUDQovRjEgMDAxMCBUZg0KNjkuMjUwMCA2NDAuODAwMCBUZA0KKCBCb3JpbmcuICBNb3JlLCBhIGxpdHRsZSBtb3JlIHRleHQuIFRoZSBlbmQsIGFuZCBqdXN0IGFzIHdlbGwuICkgVGoNCkVUDQplbmRzdHJlYW0NCmVuZG9iag0KDQo4IDAgb2JqDQpbL1BERiAvVGV4dF0NCmVuZG9iag0KDQo5IDAgb2JqDQo8PA0KL1R5cGUgL0ZvbnQNCi9TdWJ0eXBlIC9UeXBlMQ0KL05hbWUgL0YxDQovQmFzZUZvbnQgL0hlbHZldGljYQ0KL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcNCj4+DQplbmRvYmoNCg0KMTAgMCBvYmoNCjw8DQovQ3JlYXRvciAoUmF2ZSBcKGh0dHA6Ly93d3cubmV2cm9uYS5jb20vcmF2ZVwpKQ0KL1Byb2R1Y2VyIChOZXZyb25hIERlc2lnbnMpDQovQ3JlYXRpb25EYXRlIChEOjIwMDYwMzAxMDcyODI2KQ0KPj4NCmVuZG9iag0KDQp4cmVmDQowIDExDQowMDAwMDAwMDAwIDY1NTM1IGYNCjAwMDAwMDAwMTkgMDAwMDAgbg0KMDAwMDAwMDA5MyAwMDAwMCBuDQowMDAwMDAwMTQ3IDAwMDAwIG4NCjAwMDAwMDAyMjIgMDAwMDAgbg0KMDAwMDAwMDM5MCAwMDAwMCBuDQowMDAwMDAxNTIyIDAwMDAwIG4NCjAwMDAwMDE2OTAgMDAwMDAgbg0KMDAwMDAwMjQyMyAwMDAwMCBuDQowMDAwMDAyNDU2IDAwMDAwIG4NCjAwMDAwMDI1NzQgMDAwMDAgbg0KDQp0cmFpbGVyDQo8PA0KL1NpemUgMTENCi9Sb290IDEgMCBSDQovSW5mbyAxMCAwIFINCj4+DQoNCnN0YXJ0eHJlZg0KMjcxNA0KJSVFT0YNCg==
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Encoding: gzip
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 26 Dec 2019 04:31:40 GMT
+      ETag: W/"a8bfe4d5d82d99e4c8fd678778195239"
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=xNqnGFtj4542r4U0p7jwylGv1ZsPONf6xPHjV1tUgOxRce9BKRk3UK6FZ6ShIboRSGW+JkMl2WktRp6cydgOKwUr900hvmF/09+mYKH1qdk+V9F+oECYCL9/LD9T; Expires=Thu, 02 Jan 2020 04:31:40 GMT; Path=/
+      Status: 200 OK
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN, Deny
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: 5687a3be-fc6c-4836-b31e-62b87d192cac
+      X-Runtime: '0.047619'
+      X-Unique-Id: 2ff4bb37-c5e8-4863-9ad2-9f9f7f18f857
+      X-XSS-Protection: 1; mode=block
+    body: '{"uri":"https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/1420069088-1","attribute":{"size":3028,"createdAt":"2019-12-26T04:31:40Z","expireAt":"2019-12-29T04:31:40Z"}}'
+- recorded: 2020-03-12T15:00:00Z
+  request:
+    method: PUT
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678.json
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+    body: !!binary ""
+  response:
+    status: 200
+    headers:
+      Content-Type: application/json; charset=utf-8
+      Status: 200 OK
+    body: '{"uri":"https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/1420069088.json","attribute":{"size":123,"createdAt":"2020-03-12T00:00:00Z","expireAt":"2020-12-31T00:00:00Z"}}'
+- recorded: 2020-03-19T08:25:03.110Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/temporaryCode/spaces/3044191822
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic NzBVT0IwMzgwekZrMkdSS0JpcVNEa2xrcElZcnpMbVQ6NzFpV3Q4dUkxenlpWVdmdW5uTHNZSjcxM1FTZEFIQmNZSEdrNGR1aWN2VUcwZmVabDU0OGx0ZmlhNkpSdU52dg==
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+  response:
+    status: 404
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Encoding: gzip
+      Content-Type: text/html; charset=utf-8
+      Date: Thu, 19 Mar 2020 08:25:05 GMT
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=h2Z1ltjrvblbQq601RjRZbrXgo9pNZGzwXX+D6gZ+Rx+28aLoa0mGI32tvm1s+b/vOQheMSLV0bHrhgOUKRjqz+7CJW6dQAeleo+UQCjxdv1nNUPs/ZHN4X+lQ3F; Expires=Thu, 26 Mar 2020 08:25:05 GMT; Path=/, AWSALBCORS=h2Z1ltjrvblbQq601RjRZbrXgo9pNZGzwXX+D6gZ+Rx+28aLoa0mGI32tvm1s+b/vOQheMSLV0bHrhgOUKRjqz+7CJW6dQAeleo+UQCjxdv1nNUPs/ZHN4X+lQ3F; Expires=Thu, 26 Mar 2020 08:25:05 GMT; Path=/; SameSite=None; Secure
+      Status: 404 Not Found
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: 56671fec-ce14-4aca-9f93-5e9186516c57
+      X-Runtime: '0.016528'
+      X-Unique-Id: edec4291-3677-4a7e-b67b-1ee26db60c6d
+      X-XSS-Protection: 1; mode=block
+    body: ''
+- recorded: 2020-03-19T08:25:03.315Z
+  request:
+    method: POST
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/temporaryCode/spaces
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Basic NzBVT0IwMzgwekZrMkdSS0JpcVNEa2xrcElZcnpMbVQ6NzFpV3Q4dUkxenlpWVdmdW5uTHNZSjcxM1FTZEFIQmNZSEdrNGR1aWN2VUcwZmVabDU0OGx0ZmlhNkpSdU52dg==
+      Connection: Keep-Alive
+      Content-Length: '59'
+      Content-Type: application/json; charset=UTF-8
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+    body: '{"spaceId":"myPrint","characters":"0123456789","length":10}'
+  response:
+    status: 201
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 19 Mar 2020 08:25:05 GMT
+      ETag: W/"2e6e96d4274be7f6aa54fa67806b7842"
+      Location: https://api.deve.smart-integration.ricoh.com/v1/aut/temporaryCode/spaces/3044191822
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=48CG6hfxPtcpSNROe+asJd/uZ8eQ0KrWnbG2h1bQgtAgdlAjNx6qvQuMYUn2gKTsS7aq2PgX95SCJuYAnveaD6tDDnY+9k4G9P4nZkVhHi/mUxyytGmEya27l4UC; Expires=Thu, 26 Mar 2020 08:25:05 GMT; Path=/, AWSALBCORS=48CG6hfxPtcpSNROe+asJd/uZ8eQ0KrWnbG2h1bQgtAgdlAjNx6qvQuMYUn2gKTsS7aq2PgX95SCJuYAnveaD6tDDnY+9k4G9P4nZkVhHi/mUxyytGmEya27l4UC; Expires=Thu, 26 Mar 2020 08:25:05 GMT; Path=/; SameSite=None; Secure
+      Status: 201 Created
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN, Deny
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: ff60967e-1472-424a-af34-d3d901fad773
+      X-Runtime: '0.028374'
+      X-Unique-Id: eff33df1-0968-4b18-953a-3b7c68dd2378
+      X-XSS-Protection: 1; mode=block
+    body: '{"spaceId":"myPrint","characters":"0123456789","length":10,"expiresIn":604800,"retentionPeriod":604800,"oneTime":false,"collisionProbabilityLimit":0.0001}'
+- recorded: 2020-03-19T08:25:03.518Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/%7B3044191822%7D/users/%7Bnl-customer%7D/temporaryCode/issue
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer 82SPuDUplulhYevvyIAWUOk1qbSmZ8ZDOF6TlKgR1uoMCyU2uTHSMf0IzCfLhWn8
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+  response:
+    status: 401
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 19 Mar 2020 08:25:05 GMT
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=1CH3co3VMHfHKAG0X1U3yqYFCMZpaXmtbWP5cU2EJ6Uu4nv/J6NbWZ3B3RiMxGNl5P+rEGWbPRX8ogdCSYONapqPorjW4VBwdCB/WjFrXI1vS/nxtAvS9yaDIbvN; Expires=Thu, 26 Mar 2020 08:25:05 GMT; Path=/, AWSALBCORS=1CH3co3VMHfHKAG0X1U3yqYFCMZpaXmtbWP5cU2EJ6Uu4nv/J6NbWZ3B3RiMxGNl5P+rEGWbPRX8ogdCSYONapqPorjW4VBwdCB/WjFrXI1vS/nxtAvS9yaDIbvN; Expires=Thu, 26 Mar 2020 08:25:05 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding: chunked
+      WWW-Authenticate: Bearer error="invalid_token"
+      X-Request-Id: a984c27e-9cca-44f6-b74e-b45b125a9c0e
+      X-Unique-Id: 33920b88-6fbd-4554-a570-95e52b65041f
+    body: '{ "error" : "invalid_token"}'
+- recorded: 2020-03-19T12:03:17.381Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/temporaryCode/issue
+    headers:
+      Accept-Encoding: gzip,deflate
+      Authorization: Bearer 82SPuDUplulhYevvyIAWUOk1qbSmZ8ZDOF6TlKgR1uoMCyU2uTHSMf0IzCfLhWn8
+      Connection: Keep-Alive
+      Content-Length: '0'
+      Host: api.deve.smart-integration.ricoh.com
+      User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_202)
+  response:
+    status: 401
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Type: application/json; charset=utf-8
+      Date: Thu, 19 Mar 2020 12:03:19 GMT
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=lLmBRN51ye+F7tg/N2n1LiYIxVe19wD+nf3pxiQzkYJZz2ezXBSboB3J1jD/c/NEDnlMhGHsy9zc0w1ZkiwyA0S/sHTUBG3R1eBfhZSQBiDGIgwFpQSc7ur6GqNX; Expires=Thu, 26 Mar 2020 12:03:19 GMT; Path=/, AWSALBCORS=lLmBRN51ye+F7tg/N2n1LiYIxVe19wD+nf3pxiQzkYJZz2ezXBSboB3J1jD/c/NEDnlMhGHsy9zc0w1ZkiwyA0S/sHTUBG3R1eBfhZSQBiDGIgwFpQSc7ur6GqNX; Expires=Thu, 26 Mar 2020 12:03:19 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding: chunked
+      WWW-Authenticate: Bearer error="invalid_token"
+      X-Request-Id: d889ce9e-bfed-4de2-9d80-8895a4cd8ce1
+      X-Unique-Id: 147bbd55-33d6-48b9-8e6f-0bd88dd4b20e
+    body: '{ "error" : "invalid_token"}'
+# Get a temporary access key 
+- recorded: 2020-03-19T01:31:58.206Z
+  request:
+    method: POST
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/temporaryCode/issue
+    headers:
+      Accept-Encoding: gzip,deflate
+      Content-Type: application/json; charset=UTF-8
+      Host: api.deve.smart-integration.ricoh.com
+    body: '{"access_url": "https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/test"}'
+  response:
+    status: 200
+    headers:
+      Cache-Control: no-cache, no-store
+      Connection: keep-alive
+      Content-Encoding: gzip
+      Content-Type: application/json; charset=utf-8
+      Date: Fri, 27 Dec 2019 01:31:58 GMT
+      ETag: W/"d9cfa992aaac99a0a3b8658641cfabff"
+      Server: nginx/1.13.6
+      Set-Cookie: AWSALB=lyvxGFGhmh8C99dBYKpMtiIGzZw0t85I5MGwRK+WVsiuWkWADi0536MPFFH3ZVegdkvu59XPvRg4c1w2aic4SD4kRQnIK2YFWr+1t1psYc/qWOT48OW8nnVyhV3K; Expires=Fri, 03 Jan 2020 01:31:57 GMT; Path=/
+      Status: 200 OK
+      Transfer-Encoding: chunked
+      X-Content-Type-Options: nosniff
+      X-Frame-Options: SAMEORIGIN, Deny
+      X-Powered-By: Phusion Passenger 6.0.2
+      X-Request-Id: 1264024b-db21-4860-b9b0-98c17e156df6
+      X-Runtime: '0.065369'
+      X-Unique-Id: 7a65f6e3-120c-40e5-b26c-041f4f607dd1
+      X-XSS-Protection: 1; mode=block
+    body: '{"code": "ABCD1234","access_url": "https://api.na.smart-integration.ricoh.com/tmpfiles/tenants/123456789/users/user0001/folders/folderA"}'
+
+    

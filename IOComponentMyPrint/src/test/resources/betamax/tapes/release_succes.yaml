@@ -1,0 +1,91 @@
+!tape
+name: release succes
+interactions:
+# Verify temporary usage code
+- recorded: 2020-03-24T11:08:43.343Z
+  request:
+    method: POST
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/temporaryCode/spaces/ricoh-sdce/verify
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+  response:
+    status: 200
+    headers:
+      Status: 200 OK
+      Transfer-Encoding: chunked
+    body: '{"expiresIn": 604800,"retentionPeriod": 604800,"oneTime": false,"extension": {"tempAuthCode": "ABCD1234", "tenantId": "3044191822", "userId": "nl-customer"},"remainingTime": 505414}'
+
+# Download json file from user area
+- recorded: 2020-03-23T11:10:43.343Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678.json
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+  response:
+    status: 200
+    headers:
+      Status: 200 OK
+      Transfer-Encoding: chunked
+    body: '[{"fileId":"0","name":"file1.pdf","tempName":"12345678-0"},{"fileId":"1","name":"file2.pdf","tempName":"12345678-1"}]'
+    
+# Download PDF file (ID=0) from user area.
+- recorded: 2020-03-23T07:43:43.222Z
+  request:
+    method: GET
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678-0
+    headers:
+      Content-Type: application/octet-stream
+      Host: api.deve.smart-integration.ricoh.com
+  response:
+    status: 200
+    headers:
+      Content-Type: application/octet-stream
+      Status: 200 OK
+      Transfer-Encoding: chunked
+    body: !!binary |-
+      H4sIAAAAAAAAA81W22rjOBi+N/gd/ptCCx3ZVnwchoGmbdhTp6UNuyyduVBjJfHgyMGWm3Zeci/2DXZfZD/ZOTTuZDDLsKwJQfol/Ufp+7+jm4vRG48NbOvor7//+NO2bMsjl4qHz7b17p1tOePnpSTnXGiRFzPMr2udZ0pWxLHtFoIbMcNs0M7ev7ctqdLmuG2ZLV1Nm/M4eV7USpNrW/unjKruqcbI9gjH6OcsreiefGOXwub/E3VVmdWvqWrcLiWsr/12bmVV1OUEkTRRjwqstSOPkkZ7q9u5KYvJndQUG+FadiXTTAyLJ7p3IQ09zlx8FCXt4FPjuNKwV1GwO7dLlBGu/STnF6lmek6eG/lkMlPpUoqFyeZPtjUc25Yx4lJpqjFCsVwe0XhqW0HEBlEAs5wzHsP+OLWtYzqju2yxzCWh0jTKMDihMap7CU1GW6vDw3boCBPGAxwN45iFbrzRMZ5nFeEnqFqIPKdULgoFv4TOCkVsmU5pajS/6aU79Fnk+hvdn+tK07Qoqa4kZYr0XNKvWalrkdOVnMyFyiYV6VoXZSbyitFVUUrS8kkzOlMpLcy0T0gBZ1HAN2Y7CvpM+xjhMYv9bd62/vVRf2hzH7NeyOIk/GZsQ+RPzU7pi/lepO6ga33suj5L/G0pm1Ic1Nd7tYfhAE8rSbbFPJS61pc++nDx3fg/r1uAN+sNvl23TmyXj1I1d57ROUAqU7VMCY9wCRgGJjPGduECYDbgscMag5X/M0yM4NIaS3d+GmEXE8Mo/B6Q2AVE3gs/9iERiZ5s8z8ti0VbAY/R7+gO3/OuI2gWBttL0rkP/266uyOHW8A+TLdP6Xp+SvNiRQ8NmJB+XgJTANnoDZWup1NGw1qTKjSJarMJo5XQk7nZ2cfuPk4vRYZWnJbPfSDrcNr7GPZdhra5AdEWLxk1/eYUrS/PtEaPe2FjjFaFC4tF9KGmj5lYZZ6zF4F+9REa9tBc7nvHtGVnjHYGmrC7/YZzdF+pISXo13f1A/IOUmaomQfBB7HAbGSGQ1HJhrs4P8j8UepsIiC9VJMiNel3fsvUmaqyjaDLl8ACXpo9B/FA26XjW/Eo6ePxXOvlW8dZrVZMyceyUAJvYOGUWP14cgJDIEdpPZE48aFdpwtZZTNVmcVGG/jChdCSji/ectcN3YELnsNjHmLHPg18KiUIiUse4jJ0qv0oDIJBQGZl/XlIlflI7WQJaF1H5vkAlI6MczDUjmyQIAf7Mi94vc8LX+/jPn9ll/sBAHdfHw/A7LYy2wKPAnkq14T7Lvsim6Cd2wLvyLBxYKPzo5oW4ITtzGTKEENR6jZNPPJ8UPijy+uRbf0DCJvCotQLAAA=
+      
+# Delete PDF file (ID=0) from user area.
+- recorded: 2020-03-23T07:43:43.222Z
+  request:
+    method: DELETE
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678-0
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+  response:
+    status: 200
+    headers:
+      Status: 200 OK
+      Transfer-Encoding: chunked
+    body:
+     
+# Delete json file from user area.
+- recorded: 2020-03-23T07:43:43.222Z
+  request:
+    method: DELETE
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678.json
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+  response:
+    status: 200
+    headers:
+      Status: 200 OK
+      Transfer-Encoding: chunked
+    body: 
+
+# Upload json file to user area            
+- recorded: 2020-03-23T15:00:00Z
+  request:
+    method: PUT
+    uri: https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678.json
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+    body: !!binary ""
+  response:
+    status: 200
+    headers:
+      Content-Type: application/json; charset=utf-8
+      Status: 200 OK
+    body: '{"uri":"https://api.deve.smart-integration.ricoh.com/v1/tmpfiles/tenants/3044191822/users/nl-customer/folders/myPrint/files/12345678.json","attribute":{"size":123,"createdAt":"2020-03-12T00:00:00Z","expireAt":"2020-03-24T00:00:00Z"}}'
+            

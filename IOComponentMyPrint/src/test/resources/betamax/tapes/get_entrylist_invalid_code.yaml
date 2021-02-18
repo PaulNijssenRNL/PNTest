@@ -1,0 +1,15 @@
+!tape
+name: get entrylist invalid code
+interactions:
+- recorded: 2020-03-24T00:00:00.000Z
+  request:
+    method: POST
+    uri: https://api.deve.smart-integration.ricoh.com/v1/aut/temporaryCode/spaces/ricoh-sdce/verify
+    headers:
+      Host: api.deve.smart-integration.ricoh.com
+  response:
+    status: 400
+    headers:
+      Content-Type: application/json; charset=utf-8
+      Status: 200 OK
+    body: '{"errors":[{"message_id": "error.wrong_temporary_code","message": "other"}]}'

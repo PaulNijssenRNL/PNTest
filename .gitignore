@@ -1,0 +1,23 @@
+/.metadata/
+*/bin/
+*/build/
+*/out/
+*/.gradle/
+*/.settings/
+*/.project
+*/.classpath
+*/*.log
+*/gradle
+*/gradlew
+*/gradlew.bat
+*/license/gradle.license
+
+*.class
+
+# betamax files:
+*.jks
+*.cert
+*.csr
+
+# Do include the jar-files necessary for IOComponent
+!src/main/libs/*

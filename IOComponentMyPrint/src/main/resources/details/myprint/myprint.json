@@ -1,0 +1,197 @@
+{
+  "name" : "myPrint",
+  "displayName" : "$component.displayName",
+  "developer" : null,
+  "scheme" : "io-myprint",
+  "operations" : [ {
+    "name" : "register",
+    "displayName" : "$operation.register.displayName",
+    "description" : "$operation.register.description",
+    "execEnv" : null,
+    "producerClassName" : "com.ricoh.nsp.io.component.myprint.operations.MyPrintRegisterProducer",
+    "parameters" : [ {
+      "name" : "accessToken",
+      "displayName" : "RSI Access Token",
+      "description" : "RSI Access Token",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "clientId",
+      "displayName" : "RSI Application ID",
+      "description" : "RSI Application ID",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "clientSecret",
+      "displayName" : "RSI Application Secret",
+      "description" : "RSI Application Secret",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "codeSpaceLength",
+      "displayName" : "Code Space Length",
+      "description" : "Temp Code Space ID (PIN) length",
+      "type" : "string",
+      "required" : false,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "codeSpaceCharacters",
+      "displayName" : "Code space characters",
+      "description" : "Character set for the temp code space ID (PIN).",
+      "type" : "string",
+      "required" : false,
+      "paramClassName" : "java.lang.String"
+    } ],
+    "outputFormats" : [ ]
+  }, {
+    "name" : "release",
+    "displayName" : "Release",
+    "description" : "Release",
+    "execEnv" : null,
+    "producerClassName" : "com.ricoh.nsp.io.component.myprint.operations.MyPrintReleaseProducer",
+    "parameters" : [ {
+      "name" : "tenantId",
+      "displayName" : "RSI Tenant ID",
+      "description" : "RSI Tenant ID",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "clientId",
+      "displayName" : "RSI Application ID",
+      "description" : "RSI Application ID",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "clientSecret",
+      "displayName" : "RSI Application Secret",
+      "description" : "RSI Application Secret",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "fileId",
+      "displayName" : "File ID",
+      "description" : "File ID",
+      "type" : "string",
+      "required" : true,
+      "additionalInputType" : [ "file_browse" ]
+    }, {
+      "name" : "code",
+      "displayName" : "Code",
+      "description" : "Code",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "invalidCodeMessage",
+      "displayName" : "InvalidCodeMessage",
+      "description" : "Invalid code message",
+      "type" : "string",
+      "required" : false,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "noMoreFilesMessage",
+      "displayName" : "NoMoreFilesMessage",
+      "description" : "No more files message",
+      "type" : "string",
+      "required" : false,
+      "paramClassName" : "java.lang.String"
+    } ],
+    "outputFormats" : null,
+    "actionParameters" : [ ],
+    "requireNoCredentials" : true
+  }, {
+    "name" : "_getEntryList",
+    "displayName" : "getEntryList",
+    "description" : "getEntryList",
+    "execEnv" : null,
+    "producerClassName" : "com.ricoh.nsp.io.component.myprint.operations.MyPrintGetEntryListProducer",
+    "parameters" : [ {
+      "name" : "folderId",
+      "displayName" : "folderId",
+      "description" : "folderId",
+      "type" : "string",
+      "required" : true
+    }, {
+      "name" : "credential",
+      "displayName" : "credential",
+      "description" : "credential",
+      "type" : "string",
+      "required" : true
+    }, {
+      "name" : "option",
+      "displayName" : "option",
+      "description" : "option",
+      "type" : "object"
+    } ],
+    "outputFormats" : null,
+    "actionParameters" : [ {
+      "name" : "tenantId",
+      "required" : false
+    }, {
+      "name" : "clientId",
+      "required" : false
+    }, {
+      "name" : "clientSecret",
+      "required" : false
+    }, {
+      "name" : "code",
+      "required" : false
+    }, {
+      "name" : "invalidCodeMessage",
+      "required" : false
+    }, {
+      "name" : "noMoreFilesMessage",
+      "required" : false
+    } ],
+    "requireNoCredentials" : true
+  }, {
+    "name" : "delete",
+    "displayName" : "Delete",
+    "description" : "Delete",
+    "execEnv" : null,
+    "producerClassName" : "com.ricoh.nsp.io.component.myprint.operations.MyPrintDeleteProducer",
+    "parameters" : [ {
+      "name" : "tenantId",
+      "displayName" : "RSI Tenant ID",
+      "description" : "RSI Tenant ID",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "clientId",
+      "displayName" : "RSI Application ID",
+      "description" : "RSI Application ID",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "clientSecret",
+      "displayName" : "RSI Application Secret",
+      "description" : "RSI Application Secret",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    }, {
+      "name" : "fileId",
+      "displayName" : "File ID",
+      "description" : "File ID",
+      "type" : "string",
+      "required" : true,
+      "additionalInputType" : [ "select" ]
+    }, {
+      "name" : "code",
+      "displayName" : "Code",
+      "description" : "Code",
+      "type" : "string",
+      "required" : true,
+      "paramClassName" : "java.lang.String"
+    } ],
+    "outputFormats" : null
+  } ]
+}
