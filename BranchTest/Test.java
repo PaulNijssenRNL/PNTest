@@ -13,4 +13,5 @@ class TestClass {
 	}
 		
 	// Dit is commentaar.
+	// Wat heel nuttig kan zijn....
 }
