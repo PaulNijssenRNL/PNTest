@@ -6,4 +6,8 @@ class TestClass {
 	private static void printInfo() {
 		// Hier komt iets.
 	}
+	
+	private static void blah(String x) {
+		// Etc.
+	}
 }
