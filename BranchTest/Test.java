@@ -8,5 +8,9 @@ class TestClass {
 		// Hier komt iets.
 	}
 	
+	private static void test() {
+		// Hier komt iets.
+	}
+		
 	// Dit is commentaar.
 }
