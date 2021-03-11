@@ -3,8 +3,4 @@ class TestClass {
 		System.out.println("Main finished");
 		printInfo();
 	}
-		
-	private static void printInfo() {
-		System.out.println("info");
-	}
 }
