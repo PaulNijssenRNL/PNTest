@@ -1,7 +1,6 @@
 class TestClass {
 	public static void main(String[] args) {
 		System.out.println("Main finished");
-		printInfo();
 	}
 	
 	private static void printInfo() {
@@ -12,6 +11,5 @@ class TestClass {
 		// Hier komt iets.
 	}
 		
-	// Dit is commentaar.
-	// Wat heel nuttig kan zijn....
+	// Hier komt nog wat.
 }
